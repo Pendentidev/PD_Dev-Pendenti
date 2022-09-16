@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+.container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0.5fr 2fr 1fr 0.5fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "df-navbar df-navbar df-navbar"
+      "section1 section1 section1"
+      "section2 section3 section4"
+      "footer footer footer"; 
+}
+
+/* HEADER */
+
+.df-navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #adecff;
+    grid-area: df-navbar;
+    
+
+}
+
+.logo{
+    border: 10px black solid;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.logo p{
+    padding: 10px;
+    margin: 10px;
+}
+
+.df-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.df-ul li {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.df-ul li a{
+    text-decoration: none;
+}
+/* MAIN */
+
+.section {
+    background-image: url('../assets/img/background.jpg');
+
+}
+
+.section1 {
+    grid-area: section1;
+    background-image: url('../assets/img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+ }
+.section2 {
+    grid-area: section2;
+}
+.section3 {
+    grid-area: section3; 
+}
+.section4 {
+    grid-area: section4; 
+}
+
+
+
+/* FOOTER */
+
+.bg-footer{
+    padding: 10px;
+}
+
+.redes a i{
+    font-size: 25px;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.df-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #adecff;
+    grid-area: footer;
+}
+
+
+
+
+@media all and (max-width:768px){
+
+.container {
+
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0.5fr 1fr 1fr 0.5fr; 
+    grid-template-areas: 
+        "df-navbar df-navbar df-navbar"
+        "section1 section1 section1"
+        "section2 section3 section4"
+        "footer footer footer"; 
+}
+
+}
+
+@media all and (max-width:500px){
+
+    .container {
+
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(6, 1fr); 
+        grid-template-areas: 
+            "df-navbar"
+            "section1"
+            "section2"
+            "section3"
+            "section4"
+            "footer"; 
+    }
+
+    .logo{
+        border: 5px black solid;
+        display: flex;
+        align-items: left;
+        flex-direction: row;
+    
+    }
+}
